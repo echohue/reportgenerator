@@ -71,8 +71,8 @@ def data_cleaning(df):
     df['Order Date'] = df['Order Date'].apply(date_parser)
     df['Ship Date'] = df['Ship Date'].apply(date_parser)
     df = df.apply(lambda x: x.str.strip() if x.dtype == "object" else x)
-    df = df.apply(lambda x: x.replace({np.NaN:"Unknown"}) if x.dtype == "object" else x)
-    df = df.apply(lambda x:x.replace({np.NaN:0}) if x.dtype == "int64" or x.dtype == "float64" else x)
+    df = df.apply(lambda x: x.replace({np.nan:"Unknown"}) if x.dtype == "object" else x)
+    df = df.apply(lambda x:x.replace({np.nan:0}) if x.dtype == "int64" or x.dtype == "float64" else x)
     return df
 
 df_cleaned = data_cleaning(df)
