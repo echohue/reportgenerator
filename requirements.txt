@@ -4,3 +4,4 @@ numpy
 datetime
 dateparser
 xlsxwriter
+openpyxl
